@@ -1,24 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter as Router,Route,Routes} from 'react-router-dom';
+import Home from './pages/Home/Home';
+import SigninPage from './pages/Signin/SigninPage';
+import SignupPage from './pages/Signup/SignupPage';
+import Archive from './pages/Archieve/Archive';
+import Trash from './pages/Trash/Trash';
+import Pinned from './pages/Pinned/Pinned';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+        <Routes>
+          <Route path = "/" element = {<Home/>}/>
+          <Route path = "/signin" element = {<SigninPage/>}/>
+          <Route path = "/signup" element = {<SignupPage/>}/>
+          <Route path = "/archive" element = {<Archive/>}/>
+          <Route path = "/trash" element = {<Trash/>}/>
+          <Route path = "/pinned" element = {<Pinned/>}/>
+        </Routes>
+      </Router>
   );
 }
 
